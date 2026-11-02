@@ -1,720 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="dark scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Creative Developer & Digital Enthusiast — Premium personal portfolio showcasing projects, skills, and experience.">
-  <meta name="keywords" content="portfolio, developer, creative, web development, UI/UX">
-  <meta name="author" content="Alex Morgan">
-  <meta name="theme-color" content="#1C211D">
-  <meta property="og:title" content="Alex Morgan — Creative Developer & Digital Enthusiast">
-  <meta property="og:description" content="Premium personal portfolio showcasing projects, skills, and experience.">
-  <meta property="og:type" content="website">
-  <title>Alex Morgan — Creative Developer &amp; Digital Enthusiast</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portofolio Athoillah XII TKJ | Reitrann.dev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','sans-serif'],heading:['Plus Jakarta Sans','sans-serif']},colors:{brand:{50:'#eef2ff',100:'#e0e7ff',500:'#6366f1',600:'#4f46e5',700:'#4338ca',900:'#312e81'}}}}};
+</script>
+<style>
+.glassmorphism{background:rgba(255,255,255,.72);backdrop-filter:blur(14px)}
+.dark .glassmorphism{background:rgba(15,23,42,.75);backdrop-filter:blur(14px)}
+.gradient-text{background:linear-gradient(135deg,#60a5fa,#8b5cf6 50%,#ec4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.cursor-blink:after{content:'|';animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-scene{background-image:linear-gradient(90deg,rgba(2,6,23,.91),rgba(2,6,23,.68) 40%,rgba(2,6,23,.08) 82%),linear-gradient(0deg,rgba(2,6,23,.6),transparent 45%),url('banner-minecraft.jpg');background-size:cover;background-position:center 54%}
+html:not(.dark) .hero-scene{background-image:linear-gradient(90deg,rgba(15,23,42,.84),rgba(15,23,42,.62) 40%,rgba(15,23,42,.08) 82%),linear-gradient(0deg,rgba(15,23,42,.48),transparent 48%),url('banner-minecraft.jpg')}
+.filter-btn.active-filter{color:white;background:linear-gradient(90deg,#4f46e5,#db2777);box-shadow:0 8px 24px #6366f133}
+.filter-btn.inactive-filter{color:#475569;background:white;border:1px solid #e2e8f0}
+.dark .filter-btn.inactive-filter{color:#cbd5e1;background:#0f172a;border-color:#1e293b}
+@media(max-width:640px){.hero-scene{background-position:58% center}}
+</style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans transition-colors duration-300 selection:bg-brand-500 selection:text-white">
 
-  <!-- ============ NAVIGATION ============ -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-logo">
-        <span class="logo-text">AM<span class="logo-dot">.</span></span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <a href="#contact" class="nav-cta">Let's Talk</a>
-      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-    </div>
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-      <ul class="mobile-nav-links">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <a href="#contact" class="nav-cta mobile-cta">Let's Talk</a>
-    </div>
+<header class="fixed top-0 inset-x-0 z-50 glassmorphism border-b border-slate-200/50 dark:border-slate-800/50">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <a href="#home" class="flex items-center gap-3 group"><div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-pink-500 flex items-center justify-center text-white font-heading font-bold text-xl shadow-lg group-hover:scale-105 transition">A</div><span class="font-heading font-bold text-xl tracking-tight text-slate-900 dark:text-white">Reitrann<span class="gradient-text">.dev</span></span></a>
+  <nav class="hidden lg:flex items-center gap-7">
+   <a href="#home" class="font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Beranda</a><a href="#about" class="font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Tentang</a><a href="#skills" class="font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Keahlian</a><a href="#projects" class="font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Portofolio</a><a href="#experience" class="font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Pengalaman</a><a href="#contact" class="font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Kontak</a>
   </nav>
+  <div class="hidden md:flex items-center gap-4"><button id="themeToggleBtn" aria-label="Ganti tema" class="p-2.5 rounded-xl bg-slate-200/60 dark:bg-slate-800/60 text-slate-700 dark:text-slate-200"><i id="themeIcon" class="fa-solid fa-sun text-lg"></i></button><a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-pink-600 text-white font-medium text-sm shadow-md">Hubungi Saya</a></div>
+  <div class="flex items-center gap-2 md:hidden"><button id="mobileThemeToggleBtn" aria-label="Ganti tema" class="p-2.5 rounded-xl bg-slate-200/60 dark:bg-slate-800/60 text-slate-700 dark:text-slate-200"><i id="mobileThemeIcon" class="fa-solid fa-sun"></i></button><button id="mobileMenuBtn" aria-label="Toggle menu" class="p-2.5 text-slate-700 dark:text-slate-200"><i class="fa-solid fa-bars text-xl" id="menuIcon"></i></button></div>
+ </div>
+ <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 pt-2 pb-6 space-y-2">
+  <a href="#home" class="mobile-nav-link block py-2 px-4 rounded-lg">Beranda</a><a href="#about" class="mobile-nav-link block py-2 px-4 rounded-lg">Tentang</a><a href="#skills" class="mobile-nav-link block py-2 px-4 rounded-lg">Keahlian</a><a href="#projects" class="mobile-nav-link block py-2 px-4 rounded-lg">Portofolio</a><a href="#experience" class="mobile-nav-link block py-2 px-4 rounded-lg">Pengalaman</a><a href="#contact" class="mobile-nav-link block py-2 px-4 rounded-lg">Kontak</a>
+  <a href="#contact" class="block text-center py-3 rounded-xl bg-gradient-to-r from-brand-600 to-pink-600 text-white">Hubungi Saya</a>
+ </div>
+</header>
 
-  <!-- ============ HERO SECTION ============ -->
-  <section id="home" class="hero">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <div class="availability-badge reveal">
-          <span class="pulse-dot"></span>
-          Available for Opportunities
-        </div>
-        <p class="hero-label reveal">HELLO, I'M</p>
-        <h1 class="hero-name reveal">Alex<br>Morgan</h1>
-        <p class="hero-title reveal">Creative Developer &amp; Digital Enthusiast</p>
-        <p class="hero-description reveal">I craft thoughtful digital experiences that merge clean code with compelling design. Passionate about building interfaces that are as functional as they are beautiful.</p>
-        <div class="hero-buttons reveal">
-          <a href="#projects" class="btn btn-primary">
-            <span>Explore My Work</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-          <a href="#" class="btn btn-secondary" download>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            <span>Download CV</span>
-          </a>
-        </div>
-      </div>
-      <div class="hero-image reveal">
-        <div class="hero-image-wrapper">
-          <div class="hero-image-placeholder">
-            <span>AM</span>
-          </div>
-          <div class="hero-decoration hero-dec-1"></div>
-          <div class="hero-decoration hero-dec-2"></div>
-          <div class="hero-decoration hero-dec-3"></div>
-        </div>
-      </div>
+<main class="pt-20">
+<!-- HERO: gambar Minecraft menjadi background utama -->
+<section id="home" class="hero-scene min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden py-20 lg:py-24">
+ <div class="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-3xl text-center lg:text-left space-y-6">
+   <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white backdrop-blur-md text-xs sm:text-sm"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>Siswa XII TKJ • Terbuka untuk Project & PKL</div>
+   <h1 class="font-heading text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight text-white">Halo, Saya<br><span class="gradient-text">Athoillah</span></h1>
+   <div class="text-xl sm:text-2xl font-heading font-semibold text-slate-100 min-h-9 flex items-center justify-center lg:justify-start"><span class="mr-2">Saya seorang</span><span id="typewriter" class="gradient-text cursor-blink font-bold"></span></div>
+   <p class="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">Menguasai administrasi jaringan komputer, konfigurasi MikroTik & Server Linux, serta pengembangan antarmuka web modern yang responsif dan berkinerja tinggi.</p>
+   <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2"><a href="#projects" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-pink-600 text-white font-semibold shadow-lg text-center flex items-center justify-center gap-2">Lihat Portofolio <i class="fa-solid fa-arrow-right text-sm"></i></a><a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-950/30 border border-white/40 text-white font-semibold backdrop-blur-md text-center flex items-center justify-center gap-2"><i class="fa-regular fa-paper-plane text-brand-300"></i>Kontak Saya</a></div>
+   <div class="pt-5 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white"><span class="text-xs font-semibold uppercase tracking-wider text-slate-200">Temukan saya:</span><a href="https://wa.me/6287701492919" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-white/15 border border-white/20 flex items-center justify-center hover:bg-brand-600"><i class="fa-brands fa-whatsapp"></i></a><a href="https://tiktok.com/@ziyuriint" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-white/15 border border-white/20 flex items-center justify-center hover:bg-brand-600"><i class="fa-brands fa-tiktok"></i></a><a href="https://www.instagram.com/ziyurii_nt" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-white/15 border border-white/20 flex items-center justify-center hover:bg-brand-600"><i class="fa-brands fa-instagram"></i></a><a href="https://youtube.com/@ziyuriigj" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-white/15 border border-white/20 flex items-center justify-center hover:bg-brand-600"><i class="fa-brands fa-youtube"></i></a></div>
+  </div>
+ </div>
+ <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-slate-50 dark:from-slate-950 to-transparent pointer-events-none"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-slate-100/70 dark:bg-slate-900/40">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center max-w-3xl mx-auto mb-16"><h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 mb-2">Tentang Saya</h2><p class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Passionate dalam Mengembangkan Skill Teknologi & Kreativitas Digital</p><div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-pink-500 mx-auto mt-4 rounded-full"></div></div>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+   <div class="lg:col-span-7 space-y-6">
+    <h3 class="text-2xl font-heading font-bold text-slate-900 dark:text-white">Siapa Saya?</h3><p class="text-slate-600 dark:text-slate-300 leading-relaxed">Saya adalah pribadi yang mau belajar, bertanggung jawab, dan terus mencoba hal baru. Bagi saya, kemampuan tidak hanya didapat dari teori, tetapi juga dari pengalaman dan praktik.</p><p class="text-slate-600 dark:text-slate-300 leading-relaxed">Saya ingin terus mengembangkan kemampuan di bidang Teknik Komputer dan Jaringan serta editing, sehingga ke depannya dapat memiliki keterampilan yang bermanfaat dan siap menghadapi dunia kerja maupun pendidikan yang lebih tinggi.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+     <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex gap-3"><i class="fa-solid fa-code text-brand-500 text-xl mt-1"></i><div><h4 class="font-semibold text-slate-900 dark:text-white text-sm">Clean Code</h4><p class="text-xs text-slate-500 dark:text-slate-400">Arsitektur terstruktur & maintainable.</p></div></div>
+     <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex gap-3"><i class="fa-solid fa-mobile-screen text-pink-500 text-xl mt-1"></i><div><h4 class="font-semibold text-slate-900 dark:text-white text-sm">Responsive Design</h4><p class="text-xs text-slate-500 dark:text-slate-400">Tampilan nyaman di berbagai layar.</p></div></div>
+     <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex gap-3"><i class="fa-solid fa-gauge-high text-amber-500 text-xl mt-1"></i><div><h4 class="font-semibold text-slate-900 dark:text-white text-sm">High Performance</h4><p class="text-xs text-slate-500 dark:text-slate-400">Optimasi kecepatan dan pengalaman pengguna.</p></div></div>
+     <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex gap-3"><i class="fa-solid fa-headset text-emerald-500 text-xl mt-1"></i><div><h4 class="font-semibold text-slate-900 dark:text-white text-sm">Kolaborasi Tim</h4><p class="text-xs text-slate-500 dark:text-slate-400">Komunikasi dan kerja sama.</p></div></div>
     </div>
-    <div class="hero-scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+    <a id="downloadCvBtn" href="CV Athoillah.png" download="CV Athoillah.png" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-semibold text-sm"><i class="fa-solid fa-download"></i>Download CV</a>
+   </div>
+   <div class="lg:col-span-5"><div class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-xl space-y-5">
+    <h3 class="font-heading font-bold text-xl text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-3">Informasi Ringkas</h3>
+    <div class="space-y-4 text-sm">
+     <div class="flex flex-col sm:flex-row sm:justify-between gap-1 py-1 border-b border-slate-100 dark:border-slate-700/50"><span class="text-slate-500 dark:text-slate-400">Nama Lengkap</span><span class="font-semibold text-slate-800 dark:text-slate-200 sm:text-right">Muhammad Athoillah Solahuddin Al Ayyubi</span></div>
+     <div class="flex justify-between gap-2 py-1 border-b border-slate-100 dark:border-slate-700/50"><span class="text-slate-500 dark:text-slate-400">Kelas / Jurusan</span><span class="font-semibold text-slate-800 dark:text-slate-200">XII TKJ 1</span></div>
+     <div class="flex justify-between gap-2 py-1 border-b border-slate-100 dark:border-slate-700/50"><span class="text-slate-500 dark:text-slate-400">Fokus Keahlian</span><span class="font-semibold text-slate-800 dark:text-slate-200">Network & Web Dev</span></div>
+     <div class="flex justify-between gap-2 py-1 border-b border-slate-100 dark:border-slate-700/50"><span class="text-slate-500 dark:text-slate-400">Email</span><span class="font-semibold text-brand-600 dark:text-brand-400">ziyuriigj@gmail.com</span></div>
+     <div class="flex justify-between gap-2 py-1"><span class="text-slate-500 dark:text-slate-400">Status</span><span class="px-3 py-1 bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 rounded-full font-semibold text-xs">Siap PKL / Proyek</span></div>
     </div>
-  </section>
+   </div></div>
+  </div>
+ </div>
+</section>
 
-  <!-- ============ ABOUT SECTION ============ -->
-  <section id="about" class="about">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-number">01</span>
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">Getting to know the person behind the code</p>
-      </div>
-      <div class="about-content">
-        <div class="about-image-wrapper reveal">
-          <div class="about-image">
-            <div class="about-image-placeholder">
-              <span>AM</span>
-            </div>
-          </div>
-          <div class="about-image-border"></div>
-        </div>
-        <div class="about-text reveal">
-          <h3 class="about-heading">Crafting Digital Experiences with Purpose</h3>
-          <p>I'm a creative developer based in Jakarta, Indonesia, with a deep passion for building digital products that make a difference. With over 4 years of experience in web development and UI/UX design, I bring a unique blend of technical expertise and creative vision to every project.</p>
-          <p>My journey in tech started with a curiosity for how things work on the web. That curiosity evolved into a career dedicated to creating seamless, user-centered experiences. I believe great design is invisible — it just works.</p>
-          <p>When I'm not coding, you'll find me exploring photography, reading about emerging technologies, or contributing to open-source projects. I'm constantly learning and pushing the boundaries of what's possible on the web.</p>
-          <div class="about-stats">
-            <div class="stat-card">
-              <span class="stat-number">4+</span>
-              <span class="stat-label">Years of Experience</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">30+</span>
-              <span class="stat-label">Projects Completed</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">15+</span>
-              <span class="stat-label">Technologies Mastered</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- SKILLS -->
+<section id="skills" class="py-20">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center max-w-3xl mx-auto mb-16"><h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 mb-2">Keahlian Teknis</h2><p class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Teknologi & Tools Yang Saya Gunakan</p><div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-pink-500 mx-auto mt-4 rounded-full"></div></div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+   <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg"><div class="flex items-center gap-3 mb-6"><div class="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl"><i class="fa-solid fa-layer-group"></i></div><div><h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white">Computer & Hardware</h3><p class="text-xs text-slate-500 dark:text-slate-400">Computer Operation</p></div></div>
+    <div class="space-y-4"><div><div class="flex justify-between text-xs font-semibold mb-1"><span>Build a PC</span><span>62%</span></div><div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-2 rounded-full bg-gradient-to-r from-brand-500 to-pink-500" style="width:62%"></div></div></div><div><div class="flex justify-between text-xs font-semibold mb-1"><span>Instalasi Windows/Linux</span><span>88%</span></div><div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-2 rounded-full bg-gradient-to-r from-brand-500 to-pink-500" style="width:88%"></div></div></div><div><div class="flex justify-between text-xs font-semibold mb-1"><span>Troubleshooting Hardware/Software</span><span>78%</span></div><div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-2 rounded-full bg-gradient-to-r from-brand-500 to-pink-500" style="width:78%"></div></div></div></div>
+   </div>
+   <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg"><div class="flex items-center gap-3 mb-6"><div class="w-12 h-12 rounded-xl bg-pink-50 dark:bg-pink-950/50 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xl"><i class="fa-solid fa-server"></i></div><div><h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white">Network & Server</h3><p class="text-xs text-slate-500 dark:text-slate-400">Network Infrastructure</p></div></div>
+    <div class="space-y-4"><div><div class="flex justify-between text-xs font-semibold mb-1"><span>MikroTik / Winbox</span><span>90%</span></div><div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500" style="width:90%"></div></div></div><div><div class="flex justify-between text-xs font-semibold mb-1"><span>IP Address, DHCP, DNS, NAT</span><span>70%</span></div><div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500" style="width:70%"></div></div></div><div><div class="flex justify-between text-xs font-semibold mb-1"><span>Debian / SSH / Basic Server</span><span>95%</span></div><div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500" style="width:95%"></div></div></div></div>
+   </div>
+   <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg"><div class="flex items-center gap-3 mb-6"><div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl"><i class="fa-solid fa-cloud-arrow-up"></i></div><div><h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white">Web & Tools</h3><p class="text-xs text-slate-500 dark:text-slate-400">Infrastructure & Design</p></div></div>
+    <div class="space-y-4"><div><div class="flex justify-between text-xs font-semibold mb-1"><span>Git / GitHub</span><span>80%</span></div><div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500" style="width:80%"></div></div></div><div><div class="flex justify-between text-xs font-semibold mb-1"><span>HTML & CSS</span><span>78%</span></div><div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500" style="width:78%"></div></div></div><div><div class="flex justify-between text-xs font-semibold mb-1"><span>VirtualBox & Linux VM</span><span>88%</span></div><div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full"><div class="h-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500" style="width:88%"></div></div></div></div>
+   </div>
+  </div>
+ </div>
+</section>
 
-  <!-- ============ SKILLS SECTION ============ -->
-  <section id="skills" class="skills">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-number">02</span>
-        <h2 class="section-title">Skills &amp; Expertise</h2>
-        <p class="section-subtitle">Technologies and tools I work with daily</p>
-      </div>
-      <div class="skills-grid">
-        <!-- Programming Languages -->
-        <div class="skill-category reveal">
-          <h3 class="skill-category-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            Programming Languages
-          </h3>
-          <div class="skill-items">
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10h10V2z"></path><path d="M22 12H12v10h10V12z"></path><path d="M17 2h5v5"></path><path d="M2 17v5h5"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">JavaScript</span>
-                <span class="skill-desc">ES6+, DOM, Async Programming</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10h10V2z"></path><path d="M22 12H12v10h10V12z"></path><path d="M17 2h5v5"></path><path d="M2 17v5h5"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">TypeScript</span>
-                <span class="skill-desc">Type Safety, Generics, Interfaces</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10h10V2z"></path><path d="M22 12H12v10h10V12z"></path><path d="M17 2h5v5"></path><path d="M2 17v5h5"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">Python</span>
-                <span class="skill-desc">Scripting, Data, Automation</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10h10V2z"></path><path d="M22 12H12v10h10V12z"></path><path d="M17 2h5v5"></path><path d="M2 17v5h5"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">HTML &amp; CSS</span>
-                <span class="skill-desc">Semantic Markup, Modern CSS</span>
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- PROJECTS -->
+<section id="projects" class="py-20 bg-slate-100/70 dark:bg-slate-900/40">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center max-w-3xl mx-auto mb-12"><h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 mb-2">Portofolio Saya</h2><p class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Karya & Proyek Terbuka</p><div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-pink-500 mx-auto mt-4 rounded-full"></div></div>
+  <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12"><button class="filter-btn active-filter px-5 py-2 rounded-xl text-sm font-semibold" data-category="all">Semua Proyek</button><button class="filter-btn inactive-filter px-5 py-2 rounded-xl text-sm font-semibold" data-category="webapp">Networking</button><button class="filter-btn inactive-filter px-5 py-2 rounded-xl text-sm font-semibold" data-category="mobile">Server</button><button class="filter-btn inactive-filter px-5 py-2 rounded-xl text-sm font-semibold" data-category="uiux">Hardware / Web</button></div>
+  <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+   <article class="project-card bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md flex flex-col group" data-category="webapp"><div class="relative overflow-hidden h-52 bg-slate-800"><img src="imagesmikrotik.jpg" alt="MikroTik Network" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/6366f1/fff?text=MikroTik+Network'"><div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><button onclick="openProjectModal(0)" class="w-10 h-10 rounded-full bg-white text-slate-900"><i class="fa-solid fa-eye"></i></button></div></div><div class="p-6 flex-1 flex flex-col justify-between gap-4"><div><span class="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase">Networking</span><h3 class="font-heading font-bold text-xl text-slate-900 dark:text-white mt-1 mb-2">MikroTik Network Configuration</h3><p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Praktik konfigurasi jaringan menggunakan MikroTik dan Winbox, meliputi IP Address, DHCP Server, DNS, NAT/Masquerade, firewall dasar, dan pengujian konektivitas.</p></div><div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100 dark:border-slate-800"><span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs">MikroTik</span><span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs">Winbox</span><span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs">Network</span></div></div></article>
+   <article class="project-card bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md flex flex-col group" data-category="mobile"><div class="relative overflow-hidden h-52 bg-slate-800"><img src="imagesdebian.jpg" alt="Debian Server" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/ec4899/fff?text=Debian+Server'"><div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><button onclick="openProjectModal(1)" class="w-10 h-10 rounded-full bg-white text-slate-900"><i class="fa-solid fa-eye"></i></button></div></div><div class="p-6 flex-1 flex flex-col justify-between gap-4"><div><span class="text-xs font-bold text-pink-600 dark:text-pink-400 uppercase">Server / Linux</span><h3 class="font-heading font-bold text-xl text-slate-900 dark:text-white mt-1 mb-2">Debian Server & SSH</h3><p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Praktik instalasi dan konfigurasi Debian Server melalui VirtualBox, termasuk konfigurasi IP, SSH, remote access menggunakan PuTTY, serta persiapan web server.</p></div><div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100 dark:border-slate-800"><span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs">Debian</span><span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs">VirtualBox</span><span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs">PuTTY</span></div></div></article>
+   <article class="project-card bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md flex flex-col group" data-category="uiux"><div class="relative overflow-hidden h-52 bg-slate-800"><img src="imagesportfolio.jpg" alt="Web Portfolio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/8b5cf6/fff?text=Web+Portfolio'"><div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><button onclick="openProjectModal(2)" class="w-10 h-10 rounded-full bg-white text-slate-900"><i class="fa-solid fa-eye"></i></button></div></div><div class="p-6 flex-1 flex flex-col justify-between gap-4"><div><span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase">Web Development</span><h3 class="font-heading font-bold text-xl text-slate-900 dark:text-white mt-1 mb-2">Web Portfolio</h3><p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Membangun website portfolio menggunakan HTML, CSS, dan JavaScript dengan responsive layout, animasi, serta elemen visual interaktif.</p></div><div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100 dark:border-slate-800"><span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs">Website</span><span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs">HTML</span><span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs">CSS</span></div></div></article>
+  </div>
+ </div>
+</section>
 
-        <!-- Frameworks & Libraries -->
-        <div class="skill-category reveal">
-          <h3 class="skill-category-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"></rect><path d="M7 2v20"></path><path d="M17 2v20"></path><path d="M2 12h20"></path><path d="M2 7h5"></path><path d="M2 17h5"></path><path d="M17 7h5"></path><path d="M17 17h5"></path></svg>
-            Frameworks &amp; Libraries
-          </h3>
-          <div class="skill-items">
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line></svg>
-              </div>
-              <div>
-                <span class="skill-name">React.js</span>
-                <span class="skill-desc">Components, Hooks, State Management</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">Next.js</span>
-                <span class="skill-desc">SSR, SSG, API Routes</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">Tailwind CSS</span>
-                <span class="skill-desc">Utility-First, Responsive Design</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">Node.js</span>
-                <span class="skill-desc">Express, REST APIs, Backend</span>
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- EXPERIENCE -->
+<section id="experience" class="py-20">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center max-w-3xl mx-auto mb-16"><h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 mb-2">Jejak Karir</h2><p class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Pengalaman & Pendidikan</p><div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-pink-500 mx-auto mt-4 rounded-full"></div></div>
+  <div class="max-w-4xl mx-auto relative border-l-2 border-slate-200 dark:border-slate-800 pl-6 sm:pl-8 ml-4 sm:ml-auto space-y-12">
+   <div class="relative"><div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-brand-600 border-4 border-white dark:border-slate-950"></div><div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md"><div class="flex flex-col sm:flex-row sm:justify-between mb-2"><h3 class="font-heading font-bold text-xl text-slate-900 dark:text-white">Perjalanan Belajar</h3><span class="text-xs font-semibold text-brand-600 dark:text-brand-400">2024 - Sekarang</span></div><p class="text-slate-500 dark:text-slate-400 text-sm mb-4">SMK Ma'arif NU Tirto • TKJ</p><p class="text-slate-600 dark:text-slate-300 text-sm">Mempelajari dasar jaringan komputer, perakitan dan troubleshooting PC, sistem operasi, MikroTik, server Linux, serta dasar pengembangan web.</p></div></div>
+   <div class="relative"><div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-pink-500 border-4 border-white dark:border-slate-950"></div><div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md"><div class="flex flex-col sm:flex-row sm:justify-between mb-2"><h3 class="font-heading font-bold text-xl text-slate-900 dark:text-white">Praktik Jaringan & MikroTik</h3><span class="text-xs font-semibold text-pink-600 dark:text-pink-400">2025 - Sekarang</span></div><p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Lab / Pembelajaran TKJ</p><p class="text-slate-600 dark:text-slate-300 text-sm">Melakukan praktik konfigurasi MikroTik menggunakan Winbox, termasuk IP Address, DHCP Server, DNS, NAT/Masquerade, firewall dasar, dan pengujian konektivitas jaringan.</p></div></div>
+   <div class="relative"><div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-purple-500 border-4 border-white dark:border-slate-950"></div><div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md"><div class="flex flex-col sm:flex-row sm:justify-between mb-2"><h3 class="font-heading font-bold text-xl text-slate-900 dark:text-white">Web Development</h3><span class="text-xs font-semibold text-purple-600 dark:text-purple-400">2025 - Sekarang</span></div><p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Proyek Pribadi & Pembelajaran</p><p class="text-slate-600 dark:text-slate-300 text-sm">Mempelajari HTML, CSS, dan JavaScript serta mengembangkan website portfolio dan eksperimen antarmuka web.</p></div></div>
+  </div>
+ </div>
+</section>
 
-        <!-- Design Tools -->
-        <div class="skill-category reveal">
-          <h3 class="skill-category-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
-            Design Tools
-          </h3>
-          <div class="skill-items">
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path><path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path><path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"></path><path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">Figma</span>
-                <span class="skill-desc">UI Design, Prototyping, Components</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-              </div>
-              <div>
-                <span class="skill-name">Adobe Photoshop</span>
-                <span class="skill-desc">Photo Editing, Graphics, Compositing</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">Adobe Illustrator</span>
-                <span class="skill-desc">Vector Graphics, Logo Design</span>
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- CONTACT -->
+<section id="contact" class="py-20 bg-slate-100/70 dark:bg-slate-900/40">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center max-w-3xl mx-auto mb-16"><h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 mb-2">Mari Berkomunikasi</h2><p class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Punya Proyek Impian? Hubungi Saya</p><div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-pink-500 mx-auto mt-4 rounded-full"></div></div>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+   <div class="lg:col-span-5 space-y-6">
+    <div class="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl"><i class="fa-solid fa-envelope"></i></div><div><h4 class="font-semibold text-slate-900 dark:text-white text-sm">Email Saya</h4><a href="mailto:ziyuriigj@gmail.com" class="text-sm text-slate-600 dark:text-slate-400">ziyuriigj@gmail.com</a></div></div>
+    <div class="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-pink-50 dark:bg-pink-950/50 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xl"><i class="fa-brands fa-whatsapp"></i></div><div><h4 class="font-semibold text-slate-900 dark:text-white text-sm">WhatsApp / Telepon</h4><a href="https://wa.me/6287701492919" target="_blank" rel="noopener" class="text-sm text-slate-600 dark:text-slate-400">+62 877-0149-2919</a></div></div>
+    <div class="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl"><i class="fa-solid fa-location-dot"></i></div><div><h4 class="font-semibold text-slate-900 dark:text-white text-sm">Domisili</h4><p class="text-sm text-slate-600 dark:text-slate-400">Pekalongan, Indonesia</p></div></div>
+   </div>
+   <div class="lg:col-span-7">
+    <form id="contactForm" action="https://formsubmit.co/ziyuriigj@gmail.com" method="POST" class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+     <input type="hidden" name="_subject" value="Pesan Baru dari Portfolio Ziyy"><input type="hidden" name="_template" value="table">
+     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6"><div><label for="name" class="block text-xs font-semibold uppercase text-slate-600 dark:text-slate-400 mb-2">Nama Anda</label><input id="name" name="nama" type="text" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm"></div><div><label for="email" class="block text-xs font-semibold uppercase text-slate-600 dark:text-slate-400 mb-2">Email Anda</label><input id="email" name="email" type="email" required placeholder="nama@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm"></div></div>
+     <div><label for="subject" class="block text-xs font-semibold uppercase text-slate-600 dark:text-slate-400 mb-2">Subjek Pesan</label><input id="subject" name="subjek" type="text" required placeholder="Diskusi Proyek Web Application" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm"></div>
+     <div><label for="message" class="block text-xs font-semibold uppercase text-slate-600 dark:text-slate-400 mb-2">Isi Pesan</label><textarea id="message" name="pesan" rows="4" required placeholder="Halo, saya tertarik untuk bekerja sama..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm"></textarea></div>
+     <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-pink-600 text-white font-semibold shadow-lg flex items-center justify-center gap-2"><i class="fa-regular fa-paper-plane"></i>Kirim Pesan Sekarang</button>
+     <p class="text-xs text-slate-500 dark:text-slate-400">Pengiriman pertama melalui FormSubmit mungkin memerlukan verifikasi email.</p>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
 
-        <!-- Development Tools -->
-        <div class="skill-category reveal">
-          <h3 class="skill-category-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            Development Tools
-          </h3>
-          <div class="skill-items">
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6"></path><path d="M12 17v6"></path><path d="M4.22 4.22l4.24 4.24"></path><path d="M15.54 15.54l4.24 4.24"></path><path d="M15.54 8.46l4.24-4.24"></path><path d="M1 12h6"></path><path d="M17 12h6"></path><path d="M4.22 19.78l4.24-4.24"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">Git &amp; GitHub</span>
-                <span class="skill-desc">Version Control, Collaboration</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-              </div>
-              <div>
-                <span class="skill-name">VS Code</span>
-                <span class="skill-desc">Extensions, Debugging, Productivity</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">Vercel &amp; Netlify</span>
-                <span class="skill-desc">Deployment, CI/CD, Hosting</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">MongoDB &amp; PostgreSQL</span>
-                <span class="skill-desc">Database Design, Queries, ORM</span>
-              </div>
-            </div>
-          </div>
-        </div>
+<footer class="bg-white dark:bg-slate-950 text-slate-700 dark:text-white border-t border-slate-200 dark:border-slate-800 py-12">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+  <div><span class="font-heading font-bold text-xl tracking-tight text-slate-900 dark:text-white">Reitrann<span class="gradient-text">.dev</span></span><p class="text-xs text-slate-500 dark:text-slate-400 mt-1">© 2026 Athoillah. Seluruh hak cipta dilindungi.</p></div>
+  <div class="flex items-center gap-6"><a href="#home" class="text-slate-500 dark:text-slate-400 hover:text-brand-600 text-sm">Beranda</a><a href="#projects" class="text-slate-500 dark:text-slate-400 hover:text-brand-600 text-sm">Portofolio</a><a href="#contact" class="text-slate-500 dark:text-slate-400 hover:text-brand-600 text-sm">Kontak</a></div>
+ </div>
+</footer>
 
-        <!-- Professional Skills -->
-        <div class="skill-category reveal">
-          <h3 class="skill-category-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            Professional Skills
-          </h3>
-          <div class="skill-items">
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">Problem Solving</span>
-                <span class="skill-desc">Analytical Thinking, Debugging</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-              </div>
-              <div>
-                <span class="skill-name">Team Collaboration</span>
-                <span class="skill-desc">Agile, Communication, Leadership</span>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-              </div>
-              <div>
-                <span class="skill-name">Project Management</span>
-                <span class="skill-desc">Planning, Delivery, Documentation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div id="projectModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+ <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
+  <button id="closeModalBtn" aria-label="Tutup modal" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button><div id="modalContent"></div>
+ </div>
+</div>
+<div id="toastContainer" class="fixed bottom-5 right-5 z-[70] flex flex-col gap-3 pointer-events-none"></div>
 
-  <!-- ============ PROJECTS SECTION ============ -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-number">03</span>
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">A selection of work I'm proud of</p>
-      </div>
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <article class="project-card reveal">
-          <div class="project-image">
-            <div class="project-image-placeholder" style="background: linear-gradient(135deg, #303A32, #414B42);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#A3B18A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">E-Commerce Platform</h3>
-            <p class="project-description">A full-featured e-commerce platform with real-time inventory management, secure payment processing, and an intuitive admin dashboard.</p>
-            <div class="project-tags">
-              <span class="tag">Next.js</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Stripe</span>
-              <span class="tag">PostgreSQL</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link project-link-primary" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                Live Demo
-              </a>
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                Source Code
-              </a>
-            </div>
-          </div>
-        </article>
+<script>
+const projectsData=[
+ {title:"MikroTik Network Configuration",category:"Networking",image:"imagesmikrotik2.jpg",description:"Dokumentasi praktik konfigurasi jaringan komputer menggunakan MikroTik RouterOS dan WinBox. Proyek ini mencakup pengaturan alamat IP, gateway, DNS, serta pengujian konektivitas.",features:["Konfigurasi IP Address dan gateway","Pengaturan DHCP dan DNS","Konfigurasi NAT dan firewall dasar","Pengujian konektivitas menggunakan ping"],techStack:["MikroTik RouterOS","WinBox","TCP/IP","Ethernet dan LAN"],liveLabel:"Panduan RouterOS",liveUrl:"https://help.mikrotik.com/docs/",githubLabel:"Repository Proyek",githubUrl:"https://github.com/resamba/portofolio"},
+ {title:"Debian Server & SSH",category:"Server/Linux",image:"imagesdebian2.jpg",description:"Dokumentasi praktik administrasi server Linux menggunakan Debian di VirtualBox, termasuk konfigurasi jaringan dan akses jarak jauh.",features:["Instalasi Debian Server","Pengaturan alamat IP","Konfigurasi SSH","Remote access menggunakan PuTTY"],techStack:["Debian Linux","VirtualBox","OpenSSH","PuTTY","CLI"],liveLabel:"Panduan Debian",liveUrl:"https://www.debian.org/doc/",githubLabel:"Repository Proyek",githubUrl:"https://github.com/resamba/portofolio"},
+ {title:"Web Portfolio",category:"Web Development",image:"imagesportfolio2.jpg",description:"Pengembangan website portofolio pribadi menggunakan HTML, CSS, dan JavaScript dengan desain responsif serta elemen interaktif.",features:["Halaman profil dan perkenalan diri","Daftar proyek dengan filter kategori","Modal detail proyek","Navigasi antarbagian website"],techStack:["HTML5","CSS3","JavaScript","GitHub Pages"],liveLabel:"Lihat Website",liveUrl:"https://resamba.github.io/portofolio/#home",githubLabel:"Source Code",githubUrl:"https://github.com/resamba/portofolio"}
+];
 
-        <!-- Project 2 -->
-        <article class="project-card reveal">
-          <div class="project-image">
-            <div class="project-image-placeholder" style="background: linear-gradient(135deg, #2a3a2e, #3d4a3f);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#A3B18A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Task Management App</h3>
-            <p class="project-description">A collaborative project management tool with drag-and-drop boards, real-time updates, and team workflow automation features.</p>
-            <div class="project-tags">
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">Socket.io</span>
-              <span class="tag">MongoDB</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link project-link-primary" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                Live Demo
-              </a>
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                Source Code
-              </a>
-            </div>
-          </div>
-        </article>
+// Tema tersimpan di browser.
+const root=document.documentElement;
+const themeButtons=[document.getElementById('themeToggleBtn'),document.getElementById('mobileThemeToggleBtn')];
+function updateThemeIcons(){const dark=root.classList.contains('dark');document.getElementById('themeIcon').className=`fa-solid ${dark?'fa-sun':'fa-moon'} text-lg`;document.getElementById('mobileThemeIcon').className=`fa-solid ${dark?'fa-sun':'fa-moon'}`;}
+if(localStorage.getItem('theme')==='light')root.classList.remove('dark');else root.classList.add('dark');
+updateThemeIcons();
+themeButtons.forEach(btn=>btn&&btn.addEventListener('click',()=>{root.classList.toggle('dark');localStorage.setItem('theme',root.classList.contains('dark')?'dark':'light');updateThemeIcons();}));
 
-        <!-- Project 3 -->
-        <article class="project-card reveal">
-          <div class="project-image">
-            <div class="project-image-placeholder" style="background: linear-gradient(135deg, #35423a, #4a574e);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#A3B18A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">AI Content Generator</h3>
-            <p class="project-description">An AI-powered writing assistant that generates blog posts, social media content, and marketing copy with customizable tone and style.</p>
-            <div class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">OpenAI</span>
-              <span class="tag">React</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link project-link-primary" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                Live Demo
-              </a>
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                Source Code
-              </a>
-            </div>
-          </div>
-        </article>
+// Efek teks berganti.
+const words=["Siswa XII TKJ 1","Network Engineering","Pelajar","Web Developer"];
+let wordIndex=0,charIndex=0,deleting=false;
+const typewriterEl=document.getElementById('typewriter');
+function type(){const word=words[wordIndex];typewriterEl.textContent=deleting?word.substring(0,charIndex-1):word.substring(0,charIndex+1);charIndex+=deleting?-1:1;let speed=deleting?50:100;if(!deleting&&charIndex===word.length){deleting=true;speed=1800;}else if(deleting&&charIndex===0){deleting=false;wordIndex=(wordIndex+1)%words.length;speed=450;}setTimeout(type,speed);}
+setTimeout(type,700);
 
-        <!-- Project 4 -->
-        <article class="project-card reveal">
-          <div class="project-image">
-            <div class="project-image-placeholder" style="background: linear-gradient(135deg, #2d3830, #404d42);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#A3B18A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Portfolio Dashboard</h3>
-            <p class="project-description">A real-time analytics dashboard for monitoring investment portfolios with interactive charts, alerts, and performance tracking.</p>
-            <div class="project-tags">
-              <span class="tag">Vue.js</span>
-              <span class="tag">D3.js</span>
-              <span class="tag">Firebase</span>
-              <span class="tag">Tailwind</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link project-link-primary" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                Live Demo
-              </a>
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                Source Code
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-      <div class="projects-more reveal">
-        <a href="#" class="view-all-link">
-          View All Projects
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-      </div>
-    </div>
-  </section>
+// Menu HP.
+const mobileMenuBtn=document.getElementById('mobileMenuBtn'),mobileMenu=document.getElementById('mobileMenu'),menuIcon=document.getElementById('menuIcon');
+mobileMenuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('hidden');menuIcon.className=mobileMenu.classList.contains('hidden')?'fa-solid fa-bars text-xl':'fa-solid fa-xmark text-xl';});
+document.querySelectorAll('.mobile-nav-link').forEach(link=>link.addEventListener('click',()=>{mobileMenu.classList.add('hidden');menuIcon.className='fa-solid fa-bars text-xl';}));
 
-  <!-- ============ EXPERIENCE SECTION ============ -->
-  <section id="experience" class="experience">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-number">04</span>
-        <h2 class="section-title">Experience &amp; Education</h2>
-        <p class="section-subtitle">My professional journey and academic background</p>
-      </div>
-      <div class="experience-content">
-        <!-- Work Experience -->
-        <div class="experience-column">
-          <h3 class="experience-column-title reveal">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            Work Experience
-          </h3>
-          <div class="timeline">
-            <div class="timeline-item reveal">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <span class="timeline-date">2024 — Present</span>
-                <h4 class="timeline-title">Senior Frontend Developer</h4>
-                <p class="timeline-org">TechVision Studio</p>
-                <p class="timeline-desc">Leading the frontend architecture for enterprise SaaS products. Mentoring junior developers and establishing coding standards across the team.</p>
-              </div>
-            </div>
-            <div class="timeline-item reveal">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <span class="timeline-date">2022 — 2024</span>
-                <h4 class="timeline-title">Frontend Developer</h4>
-                <p class="timeline-org">Digital Craft Agency</p>
-                <p class="timeline-desc">Built responsive web applications for diverse clients including fintech startups and e-commerce brands. Improved site performance by 40%.</p>
-              </div>
-            </div>
-            <div class="timeline-item reveal">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <span class="timeline-date">2021 — 2022</span>
-                <h4 class="timeline-title">Junior Web Developer</h4>
-                <p class="timeline-org">StartUp Hub</p>
-                <p class="timeline-desc">Developed and maintained client websites using modern web technologies. Collaborated with designers to implement pixel-perfect interfaces.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+// Filter proyek.
+const filterBtns=document.querySelectorAll('.filter-btn'),projectCards=document.querySelectorAll('.project-card');
+filterBtns.forEach(btn=>btn.addEventListener('click',()=>{filterBtns.forEach(b=>{b.classList.remove('active-filter');b.classList.add('inactive-filter');});btn.classList.add('active-filter');btn.classList.remove('inactive-filter');const category=btn.dataset.category;projectCards.forEach(card=>card.style.display=(category==='all'||card.dataset.category===category)?'flex':'none');}));
 
-        <!-- Education -->
-        <div class="experience-column">
-          <h3 class="experience-column-title reveal">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
-            Education &amp; Certifications
-          </h3>
-          <div class="timeline">
-            <div class="timeline-item reveal">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <span class="timeline-date">2018 — 2022</span>
-                <h4 class="timeline-title">Bachelor of Computer Science</h4>
-                <p class="timeline-org">University of Indonesia</p>
-                <p class="timeline-desc">Graduated with honors. Focused on software engineering, human-computer interaction, and web technologies.</p>
-              </div>
-            </div>
-            <div class="timeline-item reveal">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <span class="timeline-date">2023</span>
-                <h4 class="timeline-title">AWS Certified Developer</h4>
-                <p class="timeline-org">Amazon Web Services</p>
-                <p class="timeline-desc">Certified in cloud architecture, serverless computing, and AWS service integration for scalable applications.</p>
-              </div>
-            </div>
-            <div class="timeline-item reveal">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <span class="timeline-date">2022</span>
-                <h4 class="timeline-title">Google UX Design Certificate</h4>
-                <p class="timeline-org">Google / Coursera</p>
-                <p class="timeline-desc">Completed comprehensive UX design program covering user research, wireframing, prototyping, and usability testing.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+// Modal detail.
+function openProjectModal(index){const data=projectsData[index];if(!data)return;document.getElementById('modalContent').innerHTML=`
+<div class="space-y-6"><img src="${data.image}" alt="${data.title}" class="w-full h-64 sm:h-80 object-cover rounded-2xl" onerror="this.src='https://placehold.co/800x600/4f46e5/fff?text=Project+Image'">
+<div><span class="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase">${data.category}</span><h3 class="font-heading font-bold text-2xl text-slate-900 dark:text-white mt-1">${data.title}</h3></div>
+<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">${data.description}</p>
+<div><h4 class="font-semibold text-slate-900 dark:text-white text-sm mb-2">Fitur Utama:</h4><ul class="list-disc list-inside text-xs text-slate-600 dark:text-slate-400 space-y-1">${data.features.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+<div><h4 class="font-semibold text-slate-900 dark:text-white text-sm mb-2">Teknologi Digunakan:</h4><div class="flex flex-wrap gap-2">${data.techStack.map(x=>`<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs">${x}</span>`).join('')}</div></div>
+<div class="flex flex-wrap gap-3 pt-4 border-t border-slate-100 dark:border-slate-800"><a href="${data.liveUrl}" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-pink-600 text-white text-sm">${data.liveLabel}</a><a href="${data.githubUrl}" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm">${data.githubLabel}</a></div></div>`;
+const modal=document.getElementById('projectModal');modal.classList.remove('hidden');modal.classList.add('flex');document.body.classList.add('overflow-hidden');}
+function closeProjectModal(){const modal=document.getElementById('projectModal');modal.classList.add('hidden');modal.classList.remove('flex');document.body.classList.remove('overflow-hidden');}
+document.getElementById('closeModalBtn').addEventListener('click',closeProjectModal);
+document.getElementById('projectModal').addEventListener('click',e=>{if(e.target.id==='projectModal')closeProjectModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProjectModal();});
 
-  <!-- ============ CONTACT SECTION ============ -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-number">05</span>
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle contact-headline">Let's create something amazing together.</p>
-      </div>
-      <div class="contact-content">
-        <div class="contact-info reveal">
-          <p class="contact-intro">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out through any of the channels below.</p>
-          <div class="contact-methods">
-            <a href="mailto:hello@alexmorgan.dev" class="contact-method">
-              <div class="contact-method-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              </div>
-              <div>
-                <span class="contact-method-label">Email</span>
-                <span class="contact-method-value">hello@alexmorgan.dev</span>
-              </div>
-            </a>
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="contact-method">
-              <div class="contact-method-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              </div>
-              <div>
-                <span class="contact-method-label">WhatsApp</span>
-                <span class="contact-method-value">+62 812 3456 7890</span>
-              </div>
-            </a>
-            <a href="https://github.com/alexmorgan" target="_blank" rel="noopener noreferrer" class="contact-method">
-              <div class="contact-method-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              </div>
-              <div>
-                <span class="contact-method-label">GitHub</span>
-                <span class="contact-method-value">github.com/alexmorgan</span>
-              </div>
-            </a>
-            <a href="https://linkedin.com/in/alexmorgan" target="_blank" rel="noopener noreferrer" class="contact-method">
-              <div class="contact-method-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </div>
-              <div>
-                <span class="contact-method-label">LinkedIn</span>
-                <span class="contact-method-value">linkedin.com/in/alexmorgan</span>
-              </div>
-            </a>
-            <a href="https://instagram.com/alexmorgan.dev" target="_blank" rel="noopener noreferrer" class="contact-method">
-              <div class="contact-method-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </div>
-              <div>
-                <span class="contact-method-label">Instagram</span>
-                <span class="contact-method-value">@alexmorgan.dev</span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="contact-form-wrapper reveal">
-          <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-            <div class="form-group">
-              <label for="name" class="form-label">Full Name</label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required autocomplete="name">
-              <span class="form-error" id="nameError"></span>
-            </div>
-            <div class="form-group">
-              <label for="email" class="form-label">Email Address</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required autocomplete="email">
-              <span class="form-error" id="emailError"></span>
-            </div>
-            <div class="form-group">
-              <label for="subject" class="form-label">Subject</label>
-              <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Discussion" required>
-              <span class="form-error" id="subjectError"></span>
-            </div>
-            <div class="form-group">
-              <label for="message" class="form-label">Message</label>
-              <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell me about your project..." rows="5" required></textarea>
-              <span class="form-error" id="messageError"></span>
-            </div>
-            <button type="submit" class="btn btn-primary form-btn" id="submitBtn">
-              <span class="btn-text">Send Message</span>
-              <span class="btn-loading" style="display:none;">
-                <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg>
-                Sending...
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-            </button>
-            <div class="form-status" id="formStatus"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+// Notifikasi unduh CV.
+const downloadCvBtn=document.getElementById('downloadCvBtn');
+if(downloadCvBtn)downloadCvBtn.addEventListener('click',()=>{const toast=document.createElement('div');toast.className='pointer-events-auto px-5 py-4 rounded-xl shadow-2xl border-l-4 border-emerald-500 bg-slate-900 text-white text-sm';toast.textContent='Memulai pengunduhan file Curriculum Vitae...';const box=document.getElementById('toastContainer');box.appendChild(toast);setTimeout(()=>toast.remove(),3000);});
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#home" class="footer-logo">AM<span class="logo-dot">.</span></a>
-          <p class="footer-tagline">Crafting digital experiences with purpose and precision.</p>
-        </div>
-        <div class="footer-social">
-          <a href="https://github.com/alexmorgan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-          </a>
-          <a href="https://linkedin.com/in/alexmorgan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-          </a>
-          <a href="https://instagram.com/alexmorgan.dev" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          </a>
-          <a href="https://twitter.com/alexmorgan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-          </a>
-          <a href="mailto:hello@alexmorgan.dev" class="social-link" aria-label="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          </a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2026 Alex Morgan. All rights reserved.</p>
-        <button class="back-to-top" aria-label="Back to top">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
-          Back to Top
-        </button>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
+// FormSubmit memakai submit HTML biasa. Tidak memakai preventDefault/fetch,
+// supaya tidak terkena masalah CORS. Email tujuan perlu diaktivasi pada pengiriman pertama.
+</script>
 </body>
 </html>
